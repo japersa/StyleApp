@@ -11,7 +11,26 @@ namespace StyleApp.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(new List<User>());
+
+            List<User> value = new List<User>();
+            User user0 = new User();
+            user0.Id = 1;
+            user0.Name = "Alvaro Perez";
+            user0.Email = "japersa92@gmail.com";
+            value.Add(user0);
+
+            User user1 = new User();
+            user1.Id = 2;
+            user1.Name = "Laura";
+            user1.Email = "laura@gmail.com";
+            value.Add(user1);
+
+            User user2 = new User();
+            user2.Id = 3;
+            user2.Name = "Angie";
+            user2.Email = "Angie@gmail.com";
+            value.Add(user2);
+            return base.Ok(value);
         }
 
         [HttpGet("{id}")]
